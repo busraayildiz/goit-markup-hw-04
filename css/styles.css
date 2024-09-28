@@ -16,6 +16,7 @@ p {
 
 ul {
     margin: 0;
+    padding: 0;
     list-style-type: none;
 }
 
@@ -32,13 +33,17 @@ img {
 
 .name-container {
     display: flex;
-    height: 72px;
+    height: 100%;
+    margin: 0 auto;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .header {
     border-bottom: 1px solid #e7e9fc;
+    box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+            0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
+    height: 72px;
 }
 
 .logo {
@@ -63,16 +68,15 @@ img {
 
 .navigation {
     display: flex;
-    /* justify-content: space-evenly; */
     align-items: center;
 }
 
 .page-menu {
     display: flex;
     gap: 40px;
+    margin-left: 76px;
 }
 
-/* .navigation > ul a  */
 .page-menu-list {
     list-style-type: none;
     text-decoration: none;
@@ -97,6 +101,22 @@ address {
     font-style: normal;
 }
 
+.studio {
+    position: relative;
+    color: #404bbf;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.studio::after {
+    content: "";
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    height: 4px;
+    background-color: #404bbf;
+    border-radius: 2px;
+}
 .contacts {
     display: flex;
     gap: 40px;
@@ -114,9 +134,14 @@ address {
     line-height: 1.5;
     letter-spacing: 0.02em;
     justify-content: center;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .mail-tel:hover {
+    color: #404bbf;
+}
+
+.mail-tel:active {
     color: #404bbf;
 }
 
@@ -124,11 +149,18 @@ address {
     color: #404bbf;
 }
 
-.main-content-section1 {
-    background-color: #2E2F42;
-    height: 600px;
-    display: flex;
-    padding: 188px 0;
+.first-section {
+    background-color: #2e2f42;
+        padding: 188px 0;
+        height: 600px;
+        background-image: linear-gradient(rgba(46, 47, 66, 0.7),
+                rgba(46, 47, 66, 0.7)),
+            url(../images/people-office.jpg);
+        max-width: 1440px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        margin: 0 auto;
 }
 
 .main-title-first {
@@ -143,10 +175,18 @@ address {
     padding-bottom: 48px;
 }
 
+.first-section-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
 .main-btn {
     display: block;
     background-color: #4d5ae5;
-    font-family: "Roboto", sans-serif;
+    font-family: inherit;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
@@ -155,14 +195,16 @@ address {
     cursor: pointer;
     border: none;
     min-width: 169px;
-    height: Hug (56px) px;
-
+    height: 56px;
+    border: none;
     padding: 16px 32px 16px 32px;
-    gap: 10px;
+        gap: 10px;
     border-radius: 4px;
     box-shadow: 0px 4px 4px 0px #00000026;
     margin: 0 auto;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 
 .main-btn:hover,
 .main-btn:focus {
@@ -183,7 +225,7 @@ h2 {
 
 h3 {
     font-size: 20px;
-    /* font-weight: 500; */
+    font-weight: 500; 
     line-height: 1.2;
     letter-spacing: 0.02em;
     color: #2e2f42;
